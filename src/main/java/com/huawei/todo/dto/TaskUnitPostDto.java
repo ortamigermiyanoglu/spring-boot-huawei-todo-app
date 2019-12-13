@@ -20,6 +20,6 @@ public class TaskUnitPostDto extends BaseEntityDto {
     private String status;
 
     private TaskPostDto task;
-    private TaskUnitPostDto parentTaskUnit;
-    private TaskUnitPostDto subTaskUnit;
+
+
 }

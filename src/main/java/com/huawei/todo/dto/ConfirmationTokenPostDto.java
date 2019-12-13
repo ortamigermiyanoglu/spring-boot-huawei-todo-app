@@ -12,5 +12,4 @@ import lombok.Setter;
 @Getter
 public class ConfirmationTokenPostDto extends BaseEntityDto {
     private String confirmationToken;
-    private UserPostDto user;
 }

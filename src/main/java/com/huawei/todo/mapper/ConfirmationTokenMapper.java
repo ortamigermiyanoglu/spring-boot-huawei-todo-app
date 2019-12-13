@@ -12,5 +12,4 @@ import org.mapstruct.Mapper;
 @Mapper
 public interface ConfirmationTokenMapper {
     ConfirmationTokenPostDto confirmationTokenToConfirmationTokenPostDto(ConfirmationToken confirmationToken);
-    ConfirmationToken confirmationTokenPostDtoToConfirmationToken(ConfirmationTokenPostDto confirmationTokenPostDto);
 }

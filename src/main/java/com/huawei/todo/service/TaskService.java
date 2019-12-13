@@ -12,6 +12,6 @@ import java.util.List;
  */
 public interface TaskService {
     TaskPostDto save(TaskPostDto taskPostDto);
-    List<TaskUnitPostDto> getAllTaskUnits(TaskPostDto taskPostDto);
-    void delete(TaskPostDto taskPostDto);
+    void delete(Integer id);
+    List<TaskPostDto> getAllTasks();
 }

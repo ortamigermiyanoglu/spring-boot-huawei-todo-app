@@ -1,10 +1,13 @@
 package com.huawei.todo.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -15,6 +18,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
+@NoArgsConstructor
 @Table(name = "users")
 @SequenceGenerator(name = "entitySeq", sequenceName = "users_seq", allocationSize = 1)
 public class User extends BaseEntity {
@@ -30,6 +34,7 @@ public class User extends BaseEntity {
     private ConfirmationToken confirmationToken;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    Set<Task> tasks = new HashSet<>();
+    private List<Task> tasks = new ArrayList<>();
+
 
 }

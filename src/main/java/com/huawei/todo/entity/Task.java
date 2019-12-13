@@ -1,11 +1,13 @@
 package com.huawei.todo.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author sumutella
@@ -15,18 +17,18 @@ import java.util.Set;
 @Setter
 @Getter
 @Entity
+@NoArgsConstructor
 @Table(name = "tasks")
 @SequenceGenerator(name = "entitySeq", sequenceName = "tasks_seq", allocationSize = 1)
 public class Task extends BaseEntity {
     @Column(name = "task_name")
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "task")
-    Set<TaskUnit> taskUnits = new HashSet<>();
-
+    private List<TaskUnit> taskUnits = new ArrayList<>();
 
 }

@@ -1,5 +1,6 @@
 package com.huawei.todo.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import java.util.Date;
  * @time 11:23 PM
  * @since 12/12/2019, Thu
  */
+@Data
 @Setter
 @Getter
 @Entity
@@ -25,7 +27,7 @@ public class TaskUnit extends BaseEntity {
     private Date deadline;
     private String status;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "task_id")
     private Task task;
 

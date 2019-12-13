@@ -1,11 +1,10 @@
 package com.huawei.todo.dto;
 
-import com.huawei.todo.entity.TaskUnit;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @author sumutella
@@ -14,9 +13,8 @@ import java.util.Set;
  */
 @Setter
 @Getter
+@NoArgsConstructor
 public class TaskPostDto extends BaseEntityDto {
     private String name;
-    private UserPostDto user;
-
-    Set<TaskUnit> taskUnits = new HashSet<>();
+    private UserGetDto user;
 }
