@@ -14,7 +14,6 @@ import java.util.Map;
 import java.util.function.Function;
 
 /**
- * @author sumutella
  * @time 11:57 AM
  * @since 12/14/2019, Sat
  */

@@ -5,7 +5,6 @@ import com.huawei.todo.entity.Task;
 import org.mapstruct.Mapper;
 
 /**
- * @author sumutella
  * @time 10:10 AM
  * @since 12/13/2019, Fri
  */

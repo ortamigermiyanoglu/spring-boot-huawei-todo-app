@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * @author sumutella
  * @time 12:29 PM
  * @since 12/14/2019, Sat
  */

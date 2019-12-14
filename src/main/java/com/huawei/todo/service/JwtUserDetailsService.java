@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 
 /**
- * @author sumutella
  * @time 12:08 PM
  * @since 12/14/2019, Sat
  */
@@ -20,7 +19,6 @@ import java.util.ArrayList;
 public class JwtUserDetailsService implements UserDetailsService {
 
     private final UserRepository userRepository;
-
     public JwtUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }

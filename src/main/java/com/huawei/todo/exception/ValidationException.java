@@ -1,7 +1,6 @@
 package com.huawei.todo.exception;
 
 /**
- * @author sumutella
  * @time 12:28 PM
  * @since 12/14/2019, Sat
  */

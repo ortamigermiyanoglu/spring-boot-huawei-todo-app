@@ -8,7 +8,6 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @author sumutella
  * @time 11:23 PM
  * @since 12/12/2019, Thu
  */

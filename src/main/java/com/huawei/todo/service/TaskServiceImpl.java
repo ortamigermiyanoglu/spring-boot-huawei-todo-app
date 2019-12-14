@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author sumutella
  * @time 5:43 PM
  * @since 12/13/2019, Fri
  */

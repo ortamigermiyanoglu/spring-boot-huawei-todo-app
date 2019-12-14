@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @author sumutella
  * @time 2:02 PM
  * @since 12/13/2019, Fri
  */

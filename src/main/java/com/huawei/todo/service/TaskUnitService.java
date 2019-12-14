@@ -5,7 +5,6 @@ import com.huawei.todo.dto.v1.TaskUnitPostDto;
 import java.util.List;
 
 /**
- * @author sumutella
  * @time 11:14 AM
  * @since 12/13/2019, Fri
  */

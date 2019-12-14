@@ -6,7 +6,6 @@ import lombok.Setter;
 
 
 /**
- * @author sumutella
  * @time 1:00 AM
  * @since 12/13/2019, Fri
  */

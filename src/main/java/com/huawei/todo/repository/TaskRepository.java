@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * @author sumutella
  * @time 11:51 AM
  * @since 12/13/2019, Fri
  */

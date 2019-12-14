@@ -10,7 +10,6 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 /**
- * @author sumutella
  * @time 11:23 PM
  * @since 12/12/2019, Thu
  */

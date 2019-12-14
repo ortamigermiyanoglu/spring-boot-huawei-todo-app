@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @author sumutella
  * @time 12:59 AM
  * @since 12/13/2019, Fri
  */

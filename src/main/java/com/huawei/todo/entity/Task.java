@@ -3,14 +3,12 @@ package com.huawei.todo.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author sumutella
  * @time 11:23 PM
  * @since 12/12/2019, Thu
  */

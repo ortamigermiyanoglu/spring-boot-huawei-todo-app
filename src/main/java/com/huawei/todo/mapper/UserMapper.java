@@ -7,7 +7,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 /**
- * @author sumutella
  * @time 10:07 AM
  * @since 12/13/2019, Fri
  */
