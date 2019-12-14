@@ -1,13 +1,9 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.TaskPostDto;
-import com.huawei.todo.dto.UserGetDto;
-import com.huawei.todo.dto.UserPostDto;
-import com.huawei.todo.entity.Task;
+import com.huawei.todo.dto.v1.UserGetDto;
+import com.huawei.todo.dto.v1.UserPostDto;
 import com.huawei.todo.entity.User;
-import com.huawei.todo.mapper.TaskMapper;
 import com.huawei.todo.mapper.UserMapper;
-import com.huawei.todo.repository.TaskRepository;
 import com.huawei.todo.repository.UserRepository;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,16 +41,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public UserGetDto findByEmail(String email) {
-        User user = userRepository.findByEmail(email).orElseGet(User::new);
-        return userMapper.userToUserGetDto(user);
-
-    }
-
-    @Transactional
-    @Override
     public List<UserGetDto> getAllUsers() {
-        // ben normalde eski tarz lambda yazmistim intellij onerdi bu yolu
         return userRepository.findAll().stream().map(userMapper::userToUserGetDto).collect(Collectors.toList());
     }
 }

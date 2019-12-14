@@ -1,6 +1,6 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.TaskUnitPostDto;
+import com.huawei.todo.dto.v1.TaskUnitPostDto;
 import com.huawei.todo.entity.TaskUnit;
 import com.huawei.todo.mapper.TaskUnitMapper;
 import com.huawei.todo.repository.TaskUnitRepository;

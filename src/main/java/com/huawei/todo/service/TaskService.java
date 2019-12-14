@@ -1,7 +1,6 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.TaskPostDto;
-import com.huawei.todo.dto.TaskUnitPostDto;
+import com.huawei.todo.dto.v1.TaskPostDto;
 
 import java.util.List;
 

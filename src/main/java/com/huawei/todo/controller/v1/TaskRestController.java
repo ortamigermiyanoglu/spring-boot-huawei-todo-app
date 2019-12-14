@@ -1,6 +1,6 @@
-package com.huawei.todo.controller;
+package com.huawei.todo.controller.v1;
 
-import com.huawei.todo.dto.TaskPostDto;
+import com.huawei.todo.dto.v1.TaskPostDto;
 import com.huawei.todo.service.TaskService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +15,10 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/tasks")
-public class TaskController {
+public class TaskRestController {
     private final TaskService taskService;
 
-    public TaskController(TaskService taskService) {
+    public TaskRestController(TaskService taskService) {
         this.taskService = taskService;
     }
 

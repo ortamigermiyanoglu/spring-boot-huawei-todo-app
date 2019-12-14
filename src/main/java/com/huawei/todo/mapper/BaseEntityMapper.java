@@ -1,6 +1,6 @@
 package com.huawei.todo.mapper;
 
-import com.huawei.todo.dto.BaseEntityDto;
+import com.huawei.todo.dto.v1.BaseEntityDto;
 import com.huawei.todo.entity.BaseEntity;
 import org.mapstruct.Mapper;
 

@@ -1,7 +1,7 @@
-package com.huawei.todo.controller;
+package com.huawei.todo.controller.v1;
 
-import com.huawei.todo.dto.UserGetDto;
-import com.huawei.todo.dto.UserPostDto;
+import com.huawei.todo.dto.v1.UserGetDto;
+import com.huawei.todo.dto.v1.UserPostDto;
 import com.huawei.todo.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import java.util.List;
  * @since 12/13/2019, Fri
  */
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/v1/users/")
 public class UserRestController {
     private final UserService userService;
 
@@ -29,7 +29,7 @@ public class UserRestController {
     }
 
 
-    @PostMapping
+    @PostMapping("save")
     public UserPostDto createNewCustomer(@RequestBody UserPostDto userPostDto){
         return userService.save(userPostDto);
     }

@@ -1,13 +1,9 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.BaseEntityDto;
-import com.huawei.todo.dto.TaskPostDto;
-import com.huawei.todo.dto.UserGetDto;
-import com.huawei.todo.dto.UserPostDto;
-import com.huawei.todo.entity.User;
+import com.huawei.todo.dto.v1.UserGetDto;
+import com.huawei.todo.dto.v1.UserPostDto;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author sumutella
@@ -16,6 +12,5 @@ import java.util.Optional;
  */
 public interface UserService {
     UserPostDto save(UserPostDto userPostDto);
-    UserGetDto findByEmail(String email);
     List<UserGetDto> getAllUsers();
 }

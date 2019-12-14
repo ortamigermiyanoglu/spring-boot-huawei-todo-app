@@ -1,7 +1,7 @@
 package com.huawei.todo.mapper;
 
-import com.huawei.todo.dto.UserGetDto;
-import com.huawei.todo.dto.UserPostDto;
+import com.huawei.todo.dto.v1.UserGetDto;
+import com.huawei.todo.dto.v1.UserPostDto;
 import com.huawei.todo.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

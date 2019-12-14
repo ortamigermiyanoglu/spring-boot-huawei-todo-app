@@ -1,4 +1,4 @@
-package com.huawei.todo.dto;
+package com.huawei.todo.dto.v1;
 
 
 import lombok.Getter;
