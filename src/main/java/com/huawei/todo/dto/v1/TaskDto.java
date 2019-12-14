@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-public class TaskPostDto extends BaseEntityDto {
+public class TaskDto extends BaseEntityDto {
     private String name;
-    private UserGetDto user;
+    private UserDto user;
 }

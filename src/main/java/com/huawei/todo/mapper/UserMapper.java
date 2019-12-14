@@ -1,7 +1,6 @@
 package com.huawei.todo.mapper;
 
-import com.huawei.todo.dto.v1.UserGetDto;
-import com.huawei.todo.dto.v1.UserPostDto;
+import com.huawei.todo.dto.v1.UserDto;
 import com.huawei.todo.entity.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -13,8 +12,6 @@ import org.mapstruct.Mapping;
 @Mapper
 public interface UserMapper  {
     @Mapping(target = "password", ignore = true)
-    UserPostDto userToUserPostDto(User user);
-    User userPostDtoToUser(UserPostDto userPostDto);
-    UserGetDto userToUserGetDto(User user);
-    User userGetDtoToUser(UserGetDto userGetDto);
+    UserDto userToUserDto(User user);
+    User userDtoToUser(UserDto userDto);
 }

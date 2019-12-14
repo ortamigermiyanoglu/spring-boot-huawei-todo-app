@@ -1,6 +1,6 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.v1.TaskPostDto;
+import com.huawei.todo.dto.v1.TaskDto;
 import com.huawei.todo.entity.Task;
 import com.huawei.todo.mapper.TaskMapper;
 import com.huawei.todo.repository.TaskRepository;
@@ -29,9 +29,9 @@ public class TaskServiceImpl implements TaskService {
 
     @Transactional
     @Override
-    public TaskPostDto save(TaskPostDto taskPostDto) {
-        Task savedTask = taskRepository.save(taskMapper.taskPostDtoToTask(taskPostDto));
-        return taskMapper.taskToTaskPostDto(savedTask);
+    public TaskDto save(TaskDto taskDto) {
+        Task savedTask = taskRepository.save(taskMapper.taskDtoToTask(taskDto));
+        return taskMapper.taskToTaskDto(savedTask);
     }
 
 
@@ -42,7 +42,7 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public List<TaskPostDto> getAllTasks() {
-        return taskRepository.findAll().stream().map(taskMapper::taskToTaskPostDto).collect(Collectors.toList());
+    public List<TaskDto> getAllTasks() {
+        return taskRepository.findAll().stream().map(taskMapper::taskToTaskDto).collect(Collectors.toList());
     }
 }

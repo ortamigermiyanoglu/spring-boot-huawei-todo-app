@@ -1,7 +1,6 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.v1.UserGetDto;
-import com.huawei.todo.dto.v1.UserPostDto;
+import com.huawei.todo.dto.v1.UserDto;
 
 import java.util.List;
 
@@ -10,6 +9,7 @@ import java.util.List;
  * @since 12/13/2019, Fri
  */
 public interface UserService {
-    UserPostDto save(UserPostDto userPostDto);
-    List<UserGetDto> getAllUsers();
+    UserDto save(UserDto userDto);
+    List<UserDto> getAllUsers();
+    Boolean existsByUsername(String username);
 }

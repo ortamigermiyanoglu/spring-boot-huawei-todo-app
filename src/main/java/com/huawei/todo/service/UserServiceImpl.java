@@ -1,7 +1,6 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.v1.UserGetDto;
-import com.huawei.todo.dto.v1.UserPostDto;
+import com.huawei.todo.dto.v1.UserDto;
 import com.huawei.todo.entity.User;
 import com.huawei.todo.mapper.UserMapper;
 import com.huawei.todo.repository.UserRepository;
@@ -31,16 +30,21 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public UserPostDto save(UserPostDto userPostDto) {
+    public UserDto save(UserDto userDto) {
 
-        User savedUser = userRepository.save(userMapper.userPostDtoToUser(userPostDto));
-        return userMapper.userToUserPostDto(savedUser);
+        User savedUser = userRepository.save(userMapper.userDtoToUser(userDto));
+        return userMapper.userToUserDto(savedUser);
 
     }
 
     @Transactional
     @Override
-    public List<UserGetDto> getAllUsers() {
-        return userRepository.findAll().stream().map(userMapper::userToUserGetDto).collect(Collectors.toList());
+    public List<UserDto> getAllUsers() {
+        return userRepository.findAll().stream().map(userMapper::userToUserDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public Boolean existsByUsername(String username) {
+        return userRepository.existsByUsername(username);
     }
 }

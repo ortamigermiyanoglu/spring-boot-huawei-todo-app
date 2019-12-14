@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  * @since 12/14/2019, Sat
  */
 @RestController
-@RequestMapping({"api/v1/user/"})
+@RequestMapping({"api/v1/users/"})
 @CrossOrigin
 public class AuthenticationRestController {
     private final AuthenticationManager authenticationManager;

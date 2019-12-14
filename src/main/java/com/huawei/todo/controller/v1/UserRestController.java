@@ -1,10 +1,11 @@
 package com.huawei.todo.controller.v1;
 
-import com.huawei.todo.dto.v1.UserGetDto;
-import com.huawei.todo.dto.v1.UserPostDto;
+import com.huawei.todo.dto.v1.UserDto;
+import com.huawei.todo.exception.ValidationException;
 import com.huawei.todo.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,14 +24,27 @@ public class UserRestController {
     }
 
     @GetMapping
-    public ResponseEntity<List<UserGetDto>> getUsers(){
+    public ResponseEntity<List<UserDto>> getUsers(){
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);
     }
 
 
     @PostMapping("save")
-    public UserPostDto createNewCustomer(@RequestBody UserPostDto userPostDto){
-        return userService.save(userPostDto);
+    public UserDto createNewCustomer(@RequestBody UserDto userDto){
+        String username = userDto.getUsername();
+        if (userService.existsByUsername(username)){
+            throw new ValidationException("Username already exists");
+        }
+
+        String password = userDto.getPassword();
+        String encodedPassword = new BCryptPasswordEncoder().encode(password);
+        String fullName = userDto.getFullName();
+
+        UserDto userDto1 = new UserDto();
+        userDto1.setUsername(username);
+        userDto1.setPassword(encodedPassword);
+        userDto1.setFullName(fullName);
+        return userService.save(userDto1);
     }
 
 }

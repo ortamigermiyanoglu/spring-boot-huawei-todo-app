@@ -1,6 +1,6 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.v1.TaskUnitPostDto;
+import com.huawei.todo.dto.v1.TaskUnitDto;
 import com.huawei.todo.entity.TaskUnit;
 import com.huawei.todo.mapper.TaskUnitMapper;
 import com.huawei.todo.repository.TaskUnitRepository;
@@ -28,9 +28,9 @@ public class TaskUnitServiceImpl implements TaskUnitService {
 
     @Transactional
     @Override
-    public TaskUnitPostDto save(TaskUnitPostDto taskUnitPostDto) {
-        TaskUnit savedTaskUnit = taskUnitRepository.save(taskUnitMapper.taskUnitPostDtoToTaskUnit(taskUnitPostDto));
-        return taskUnitMapper.taskUnitToTaskUnitPostDto(savedTaskUnit);
+    public TaskUnitDto save(TaskUnitDto taskUnitDto) {
+        TaskUnit savedTaskUnit = taskUnitRepository.save(taskUnitMapper.taskUnitDtoToTaskUnit(taskUnitDto));
+        return taskUnitMapper.taskUnitToTaskUnitDto(savedTaskUnit);
     }
 
     @Transactional
@@ -41,8 +41,8 @@ public class TaskUnitServiceImpl implements TaskUnitService {
 
     @Transactional
     @Override
-    public List<TaskUnitPostDto> getAllTaskUnits(Integer taskId) {
+    public List<TaskUnitDto> getAllTaskUnits(Integer taskId) {
         List<TaskUnit> taskUnits = taskUnitRepository.findByTask_Id(taskId);
-        return taskUnits.stream().map(taskUnitMapper::taskUnitToTaskUnitPostDto).collect(Collectors.toList());
+        return taskUnits.stream().map(taskUnitMapper::taskUnitToTaskUnitDto).collect(Collectors.toList());
     }
 }

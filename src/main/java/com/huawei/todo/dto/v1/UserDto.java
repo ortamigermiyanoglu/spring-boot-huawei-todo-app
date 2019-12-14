@@ -9,7 +9,7 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-public class UserPostDto extends BaseEntityDto {
+public class UserDto extends BaseEntityDto {
     private String username;
     private String password;
     private String fullName;

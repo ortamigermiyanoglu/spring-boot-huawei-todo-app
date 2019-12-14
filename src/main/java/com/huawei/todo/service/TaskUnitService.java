@@ -1,6 +1,6 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.v1.TaskUnitPostDto;
+import com.huawei.todo.dto.v1.TaskUnitDto;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * @since 12/13/2019, Fri
  */
 public interface TaskUnitService {
-    TaskUnitPostDto save(TaskUnitPostDto taskUnitPostDto);
+    TaskUnitDto save(TaskUnitDto taskUnitDto);
     void delete(Integer taskUnitId);
-    List<TaskUnitPostDto> getAllTaskUnits(Integer taskId);
+    List<TaskUnitDto> getAllTaskUnits(Integer taskId);
 }

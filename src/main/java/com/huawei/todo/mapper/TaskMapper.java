@@ -1,6 +1,6 @@
 package com.huawei.todo.mapper;
 
-import com.huawei.todo.dto.v1.TaskPostDto;
+import com.huawei.todo.dto.v1.TaskDto;
 import com.huawei.todo.entity.Task;
 import org.mapstruct.Mapper;
 
@@ -11,6 +11,6 @@ import org.mapstruct.Mapper;
 
 @Mapper
 public interface TaskMapper {
-    TaskPostDto taskToTaskPostDto(Task task);
-    Task taskPostDtoToTask(TaskPostDto taskPostDto);
+    TaskDto taskToTaskDto(Task task);
+    Task taskDtoToTask(TaskDto taskDto);
 }

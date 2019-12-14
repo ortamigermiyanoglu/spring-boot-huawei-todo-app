@@ -1,6 +1,6 @@
 package com.huawei.todo.service;
 
-import com.huawei.todo.dto.v1.TaskPostDto;
+import com.huawei.todo.dto.v1.TaskDto;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * @since 12/13/2019, Fri
  */
 public interface TaskService {
-    TaskPostDto save(TaskPostDto taskPostDto);
+    TaskDto save(TaskDto taskDto);
     void delete(Integer id);
-    List<TaskPostDto> getAllTasks();
+    List<TaskDto> getAllTasks();
 }

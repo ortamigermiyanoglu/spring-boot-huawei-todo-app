@@ -1,6 +1,6 @@
 package com.huawei.todo.controller.v1;
 
-import com.huawei.todo.dto.v1.TaskPostDto;
+import com.huawei.todo.dto.v1.TaskDto;
 import com.huawei.todo.service.TaskService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,13 +22,13 @@ public class TaskRestController {
     }
 
     @GetMapping
-    public ResponseEntity<List<TaskPostDto>> getTasks(){
+    public ResponseEntity<List<TaskDto>> getTasks(){
         return new ResponseEntity<>(taskService.getAllTasks(), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<TaskPostDto> createNewTask(@RequestBody TaskPostDto taskPostDto){
-        return new ResponseEntity<>(taskService.save(taskPostDto), HttpStatus.OK);
+    public ResponseEntity<TaskDto> createNewTask(@RequestBody TaskDto taskDto){
+        return new ResponseEntity<>(taskService.save(taskDto), HttpStatus.OK);
     }
 
     @DeleteMapping({"/{id}"})
