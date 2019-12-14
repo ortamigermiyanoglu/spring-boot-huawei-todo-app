@@ -1,22 +1,22 @@
-package com.huawei.todo.configuration;
+package com.huawei.todo.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
+import org.springframework.security.core.userdetails.UserDetails;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-
 /**
- * @time 11:57 AM
+ * @author sumutella
+ * @time 6:23 PM
  * @since 12/14/2019, Sat
  */
+
 @Component
 public class JwtToken implements Serializable {
 

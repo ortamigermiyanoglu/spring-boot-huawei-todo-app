@@ -1,4 +1,4 @@
-package com.huawei.todo.configuration;
+package com.huawei.todo.security;
 
 import com.huawei.todo.service.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +11,13 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 /**
- * @time 11:55 AM
+ * @author sumutella
+ * @time 6:24 PM
  * @since 12/14/2019, Sat
  */
 
@@ -33,7 +34,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
-
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -65,7 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         httpSecurity.csrf().disable()
 
-                .authorizeRequests().antMatchers("api/v1/users/authenticate","/api/v1/users/save").permitAll().
+                .authorizeRequests().antMatchers("/api/v1/users/authenticate","/api/v1/users/save").permitAll().
 
                 anyRequest().authenticated().and().
 

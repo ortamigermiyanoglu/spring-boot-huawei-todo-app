@@ -2,7 +2,7 @@ package com.huawei.todo.service;
 
 import com.huawei.todo.dto.v1.UserDto;
 import com.huawei.todo.entity.User;
-import com.huawei.todo.mapper.UserMapper;
+import com.huawei.todo.mapper.v1.UserMapper;
 import com.huawei.todo.repository.UserRepository;
 import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;

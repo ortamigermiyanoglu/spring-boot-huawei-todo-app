@@ -3,7 +3,8 @@ package com.huawei.todo.entity;
 import java.io.Serializable;
 
 /**
- * @time 12:15 PM
+ * @author sumutella
+ * @time 6:26 PM
  * @since 12/14/2019, Sat
  */
 public class JwtRequest implements Serializable {

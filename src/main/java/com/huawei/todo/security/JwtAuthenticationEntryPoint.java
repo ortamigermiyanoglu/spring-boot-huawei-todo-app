@@ -1,4 +1,4 @@
-package com.huawei.todo.configuration;
+package com.huawei.todo.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -9,7 +9,8 @@ import java.io.IOException;
 import java.io.Serializable;
 
 /**
- * @time 11:56 AM
+ * @author sumutella
+ * @time 6:22 PM
  * @since 12/14/2019, Sat
  */
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
@@ -24,4 +25,5 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
 
     }
+
 }

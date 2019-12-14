@@ -1,4 +1,4 @@
-package com.huawei.todo.mapper;
+package com.huawei.todo.mapper.v1;
 
 import com.huawei.todo.dto.v1.TaskDto;
 import com.huawei.todo.entity.Task;

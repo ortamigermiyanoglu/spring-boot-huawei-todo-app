@@ -2,7 +2,7 @@ package com.huawei.todo.service;
 
 import com.huawei.todo.dto.v1.TaskDto;
 import com.huawei.todo.entity.Task;
-import com.huawei.todo.mapper.TaskMapper;
+import com.huawei.todo.mapper.v1.TaskMapper;
 import com.huawei.todo.repository.TaskRepository;
 import org.mapstruct.factory.Mappers;
 import org.springframework.stereotype.Service;

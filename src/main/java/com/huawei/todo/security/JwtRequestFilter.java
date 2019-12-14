@@ -1,4 +1,4 @@
-package com.huawei.todo.configuration;
+package com.huawei.todo.security;
 
 import com.huawei.todo.service.JwtUserDetailsService;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -9,26 +9,27 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
 /**
- * @time 11:56 AM
+ * @author sumutella
+ * @time 6:22 PM
  * @since 12/14/2019, Sat
  */
+
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
+
 
     @Autowired
     private JwtUserDetailsService jwtUserDetailsService;
 
     private final JwtToken jwtTokenUtil;
 
-    public JwtRequestFilter( JwtToken jwtTokenUtil) {
+    public JwtRequestFilter(JwtToken jwtTokenUtil) {
         this.jwtTokenUtil = jwtTokenUtil;
     }
 

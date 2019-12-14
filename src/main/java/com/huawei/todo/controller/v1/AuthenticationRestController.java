@@ -1,17 +1,17 @@
 package com.huawei.todo.controller.v1;
 
-import com.huawei.todo.configuration.JwtToken;
 import com.huawei.todo.entity.JwtRequest;
 import com.huawei.todo.entity.JwtResponse;
+import com.huawei.todo.security.JwtToken;
 import com.huawei.todo.service.JwtUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.authentication.AuthenticationManager;
 
 /**
  * @time 12:26 PM
@@ -21,18 +21,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping({"api/v1/users/"})
 @CrossOrigin
 public class AuthenticationRestController {
-    private final AuthenticationManager authenticationManager;
-    private final JwtToken jwtToken;
-    private final JwtUserDetailsService jwtUserDetailsService;
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     @Autowired
-    public AuthenticationRestController(AuthenticationManager authenticationManager, JwtToken jwtToken, JwtUserDetailsService jwtUserDetailsService) {
-        this.authenticationManager = authenticationManager;
-        this.jwtToken = jwtToken;
-        this.jwtUserDetailsService = jwtUserDetailsService;
-    }
+    private JwtToken jwtToken;
 
-    @PostMapping("authenticate")
+    @Autowired
+    private JwtUserDetailsService jwtUserDetailsService;
+
+
+    @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
 
 
@@ -65,5 +64,4 @@ public class AuthenticationRestController {
         }
 
     }
-
 }
